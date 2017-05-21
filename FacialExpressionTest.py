@@ -3,9 +3,8 @@
 # Used for testing facial expressions
 # Input: EPA vector
 # Output: Emotions to apply + Value to assign
-# Value can be used on the Colorado Demo
+# Value can be used on the Demo Site
 #
-# http://interactive.colorado.edu/demo42.html
 ######################################################
 
 
@@ -78,6 +77,7 @@ def main(emot):
 
 if __name__ == '__main__':
 	main(appreciative)
+	main(evil)
 
 
 
