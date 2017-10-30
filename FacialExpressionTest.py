@@ -13,6 +13,11 @@
 
 import numpy as np
 from numpy import interp
+import pickle
+
+
+with open('newemotionEPAset.pickle', 'rb') as handle:
+    emotion_data = pickle.load(handle)
 
 
 
@@ -36,7 +41,7 @@ appreciative = np.array([3.1824, 2.4227, -0.0721])
 
 
 def main(emot):
-	#first dimension
+    #first dimension
     happyDist = np.linalg.norm(emot-happy)
     sadDist = np.linalg.norm(emot-sad)
 
@@ -73,12 +78,20 @@ def main(emot):
         val = 1 - interp(angerDist,[0,10],[0,1])
         print("Anger: ", val)
 
-
+    print("Evaluation: ",emot[0])
+    print("Potency: ",emot[1])
+    print("Activity: ",emot[2])
 
 if __name__ == '__main__':
-	main(appreciative)
-    print('*'*50)
-	main(evil)
+    main(appreciative)
+    print(50*'*')
+    #main(evil)
+
+    for ind,(key,value) in enumerate(emotion_data.items()):
+        print(ind+1,key,np.array(value))
+        main(value)
+        print(50*'*')
+
 
 
 
