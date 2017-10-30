@@ -77,6 +77,7 @@ def main(emot):
 
 if __name__ == '__main__':
 	main(appreciative)
+    print('*'*50)
 	main(evil)
 
 
