@@ -104,7 +104,7 @@ if __name__ == '__main__':
     #main(evil)
 
     for ind,(key,value) in enumerate(emotion_data.items()):
-        if key == "repentant":
+        if key == "sorry":
             print(ind+1,key,np.array(value))
             evalpot = np.array([value[0],value[1]])
             #print (evalpot)
